@@ -2,7 +2,18 @@ function verificaValorValido(chute) {
     const numero = +chute;
 
     if (chuteInvalido(numero)) {
+        if (chute.toUpperCase() === "DESISTO"){
+            document.body.innerHTML =
+            `
+            <h2> GAME OVER </h2>
+            <h3> Aperte o botão caso queira jogar novamente</h3>
+            <button id="jogar-novamente" class ="btn-jogar">Jogar Novamente </button>
+            `
+            document.body.style.backgroundColor = "black";
+        } else {
+
         elementosChute.innerHTML += '<div>Valor Invalido</div>';
+        }
         return
     }
 
